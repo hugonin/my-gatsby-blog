@@ -1,29 +1,32 @@
-import * as React from "react"
-import FeaturedArticles from "../components/featured-articles"
-import Hero from "../components/hero"
-import Layout from "../components/layout"
-
-
+import * as React from "react";
 import { Link, graphql } from "gatsby";
 //import { MDXRenderer } from "gatsby-plugin-mdx";
-
+import Layout from "../../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import {
+  container,
+  sectionTitle,
+  textCenter,
   articlesList,
   snippet,
   snippetImage,
   snippetTitle,
   snippetMeta,
   btnPrimary
-} from "../components/layout.module.css";
+} from "../../components/layout.module.css";
 
 
-const IndexPage = ({data}) => {
+const BlogPage = ({ data }) => {
+  // const image = getImage(data.allMdx.frontmatter.hero_image)
   return (
-    <Layout pageTitle="Home">
-       <Hero />
-       <FeaturedArticles>
+    <Layout pageTitle="My Blog Posts">
+     <section>
+     <div className={container}>
+        <h2 className={sectionTitle}>My Articles</h2>
+        <p className={textCenter}>
+           Below  are my articles!
+          </p>
         <div className={articlesList}>
           {data.allMdx.nodes.map((node) => (
             <article key={node.id} className={snippet}>
@@ -45,19 +48,21 @@ const IndexPage = ({data}) => {
                 {node.frontmatter.date}{" "}
               </p>
               <p>{node.excerpt}</p>
+           
+           
               <Link to={`/blog/${node.slug}`} className={btnPrimary}>
               Continue reading
             </Link>
             </article>
           ))}
         </div>
-        </FeaturedArticles> 
-    </Layout>
+      </div>
+     </section>
+       
     
-  )
-}
-
-export default IndexPage
+    </Layout>
+  );
+};
 
 export const query = graphql
 `
@@ -76,7 +81,6 @@ export const query = graphql
           }
         }
         id
-        body
         slug
         excerpt(pruneLength: 200)
       }
@@ -84,3 +88,4 @@ export const query = graphql
   }
 `;
 
+export default BlogPage;

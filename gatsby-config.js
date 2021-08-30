@@ -6,13 +6,33 @@ module.exports = {
   plugins: [
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-mdx",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: `blog`,
+        path: `${__dirname}/blog`,
       },
-      __key: "pages",
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 500,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#E9FBF8`,
+        theme_color: `#00856C`,
+        display: `standalone`,
+        icon: `src/images/icon.png`
+      },
     },
   ],
 };
