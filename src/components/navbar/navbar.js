@@ -37,7 +37,7 @@ const Navbar = ({ toggle }) => {
     <>
      <div>
           <StaticImage
-            src="../images/logo_transparent.png"
+            src="../../images/logo_transparent.png"
             alt="logo"
             className={logo}
             onClick={toggleHome}

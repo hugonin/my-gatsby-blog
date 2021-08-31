@@ -137,6 +137,12 @@ section,
     }
 }
 
+.article-title {
+  font-size: 700;
+  color: #005243;
+
+}
+
 .section-title {
   composes: text-center;
   color:#005243;

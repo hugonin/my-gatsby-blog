@@ -34,26 +34,26 @@ const Footer = () => {
         </div>
         <ul className={socialList}>
           <li className={socialListItem}>
-            <Link to="https://linkedin.com" className={socialListLink}>
+            <Link to="https://www.linkedin.com/in/jhdoumbekingue/" className={socialListLink}>
               <FaLinkedin />
             </Link>
           </li>
           <li className={socialListItem}>
-            <Link to="https://twitter.com" className={socialListLink}>
+            <Link to="https://twitter.com/JhDoumbe" className={socialListLink}>
               <FaTwitter />
             </Link>
           </li>
           <li className={socialListItem}>
-            <Link to="https://github.com" className={socialListLink}>
+            <Link to="https://github.com/hugonin" className={socialListLink}>
               <FaGithub />
             </Link>
           </li>
         </ul>
 
         <Router>
-          <FaLinkedin path="https://linkedin.com" />
-          <FaTwitter path="https://twitter.com" />
-          <FaGithub path="https://github.com" />
+          <FaLinkedin path="https://www.linkedin.com/in/jhdoumbekingue/" />
+          <FaTwitter path="https://twitter.com/JhDoumbe" />
+          <FaGithub path="https://github.com/hugonin" />
         </Router>
       </footer>
     </div>
